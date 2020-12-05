@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<style>
+    body {
+        background-image: url('https://cutt.ly/khjp1L6');
+    }
+</style>
+
+<body>
+    <div class="container" id="container">
+        <div class="row">
+            <div class='col-md-4 center mt-5'>
+                <%- include('menu') -%>
+            </div>
+            <div class="col-md-8 mt-5">
+                <% names.forEach(function(list){ %>
+                <%= list.name %> <%= list.school%> <%= list.position%><br>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
