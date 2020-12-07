@@ -1,0 +1,157 @@
+[
+    {
+        "NameAirline": "Nok Air",
+        "FlightNo": "DD7502",
+        "Type": "one-ways",
+        "Class": [
+            {
+                "FirstClass": {
+                    "Price": 12500,
+                    "NumberOfPassengers": 12
+                },
+                "BusinessClass": {
+                    "Price": 9999,
+                    "NumberOfPassengers": 60
+                },
+                "Economy": {
+                    "Price": 1400,
+                    "NumberOfPassengers": 435
+                }
+            }
+        ],
+        "Source": "กรุงเทพมหานคร(DMK)",
+        "AirportSource": "ท่าอากาศยานดอนเมือง",
+        "Destination": "ภูเก็ต(HKT)",
+        "AirportDestination": "ท่่าอากาศยานภูเก็ต",
+        "DateDetail": [
+            {
+                "DateStart": {
+                    "Date": "07 DEC 2020",
+                    "DepartureTime": "16:00",
+                    "ArrivingTime": "17:30"
+                }
+            }
+        ],
+        "CaptionName": "นิธิวุฒิ โรจน์ประสิทธิ์พร",
+        "CoPilotName": "กษิดิ์เดช ถนอมสิน",
+        "Numberofreceptionist": 5
+    },
+    {
+        "NameAirline": "Nok Air",
+        "FlightNo": "DD7514",
+        "Type": "one-ways",
+        "Class": [
+            {
+                "FirstClass": {
+                    "Price": 14500,
+                    "NumberOfPassengers": 12
+                },
+                "BusinessClass": {
+                    "Price": 9999,
+                    "NumberOfPassengers": 60
+                },
+                "Economy": {
+                    "Price": 1200,
+                    "NumberOfPassengers": 435
+                }
+            }
+        ],
+        "Source": "กรุงเทพมหานคร(DMK)",
+        "AirportSource": "ท่าอากาศยานดอนเมือง",
+        "Destination": "เชียงใหม่(CNX)",
+        "AirportDestination": "ท่าอากาศยานเชียงใหม่",
+        "DateDetail": [
+            {
+                "DateStart": {
+                    "Date": "07 DEC 2020",
+                    "DepartureTime": "16:30",
+                    "ArrivingTime": "17:50"
+                }
+            }
+        ],
+        "CaptionName": "ธีรวรรธน์ อัมพวานนท์",
+        "CoPilotName": "เสนีย์ ภูวเศรษฐาวร",
+        "Numberofreceptionist": 5
+    },
+    {
+        "NameAirline": "Nok Air",
+        "FlightNo": "DD7410",
+        "Type": "one-ways",
+        "Class": [
+            {
+                "FirstClass": {
+                    "Price": 10000,
+                    "NumberOfPassengers": 12
+                },
+                "BusinessClass": {
+                    "Price": 8900,
+                    "NumberOfPassengers": 60
+                },
+                "Economy": {
+                    "Price": 2283,
+                    "NumberOfPassengers": 435
+                }
+            }
+        ],
+        "Source": "กรุงเทพมหานคร(DMK)",
+        "AirportSource": "ท่าอากาศยานดอนเมือง",
+        "Destination": "ตรัง(TST)",
+        "AirportDestination": "ท่าอากาศยานตรัง",
+        "DateDetail": [
+            {
+                "DateStart": {
+                    "Date": "30 DEC 2020",
+                    "DepartureTime": "16:05",
+                    "ArrivingTime": "17:30"
+                }
+            }
+        ],
+        "CaptionName": "เสนีย์ ภูวเศรษฐาวร",
+        "CoPilotName": "ธีรวรรธน์ อัมพวานนท์",
+        "Numberofreceptionist": 5
+    },
+    {
+        "NameAirline": "Nok Air",
+        "FlightNo": "DD9704",
+        "Type": "two-ways",
+        "Class": [
+            {
+                "FirstClass": {
+                    "Price": 19000,
+                    "NumberOfPassengers": 12
+                },
+                "BusinessClass": {
+                    "Price": 12000,
+                    "NumberOfPassengers": 60
+                },
+                "Economy": {
+                    "Price": 5550,
+                    "NumberOfPassengers": 435
+                }
+            }
+        ],
+        "Source": "กรุงเทพมหานคร(DMK)",
+        "AirportSource": "ท่าอากาศยานดอนเมือง",
+        "Destination": "เลย(LOE)",
+        "AirportDestination": "ท่าอากาศยานเลย",
+        "DateDetail": [
+            {
+                "DateStart": {
+                    "Date": "27 DEC 2020",
+                    "DepartureTime": "09:20",
+                    "ArrivingTime": "10:35"
+                }
+            },
+            {
+                "DateEnd": {
+                    "Date": "03 JAN 2021",
+                    "DepartureTime": "11:10",
+                    "ArrivingTime": "12:25"
+                }
+            }
+        ],
+        "CaptionName": "นิธิวุฒิ โรจน์ประสิทธิ์พร",
+        "CoPilotName": "ธีรวรรธน์ อัมพวานนท์",
+        "Numberofreceptionist": 8
+    }
+]
