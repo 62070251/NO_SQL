@@ -51,6 +51,24 @@ app.post('/formsave', (req, res) => {
     });
 })
 
+//หน้าลบ doc เอาค่าจากไฟล์ delate.ejs
+app.get('/deleteforms', function (req, res){
+    res.render("delate");
+})
+
+//หน้าแสดงว่าข้อมูลถูกลบแล้ว ยังมีแก้อีกหน่อย
+app.post('/deleteform', (req,res) => {
+    var data = {
+        "Airline" : req.body.name,
+        "Flight" : req.body.fno
+    }
+    const db = client.db(dbName);
+    const collection = db.collection('Wizard');
+    collection.deleteOne(data, function(err, result){
+        assert.equal(err, null);
+        res.render('showdelete', { "data" : data })
+    })
+})
 
 
 client.connect(function (err) {
