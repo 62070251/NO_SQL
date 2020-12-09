@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>all</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+</head>
+<body>
+    <div class = "container pt-3">
+        <div class = "row">
+            <h5>กรุณาเลือกสายการบิน&nbsp; &nbsp;</h5>
+            <div class="dropdown">
+                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    SELECT FLIGHT
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">FILTER</a>
+                    <a class="dropdown-item" href="#">ALL FLIGHT</a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class = "row">
+            <% flight.forEach(funtion(list){%>
+            <div class = "card">
+                <div class="card-body">
+                    <h5 class="card-title"><%=list.NameAirline%></h5>
+                    <h6 class="card-subtitle mb-2 text-muted"><%=list.Source%> => <%=list.Destination%></h6>
+                    <h6 class="card-subtitle mb-2 text-muted"><%=list.AirportSource%> => <%=list.AirportDestination%></h6>
+                    <p class="card-text">DETIALS : <br>Flight No.<%=list.FlightNo%> <br> Type <%=list.Type%> <br> Class <%=list.Class%></p>
+                    <hr>
+                    <p class="card-subtitle mb-2 text-muted">Caption : <br><%=list.CaptionName%> <br><%=list.CoPilotName%> <br><%=list.Numberofreceptionist%></p>
+                </div>
+                <div class="card-footer">
+                    <div class="col">
+                        <p>DateStart</p>
+                        <p class="card-text" style="text-align: center;"><%=Dates%> <br> <%=DepartureTime%> <br> <%=ArrivingTime%></p>
+                    </div>
+                    <div class="col">
+                        <p>DateEnd</p>
+                        <p class="card-text" style="text-align: center;"><%=Dates%> <br> <%=DepartureTime%> <br> <%=ArrivingTime%></p>
+                    </div>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+    </div>
+</body>
+</html>
