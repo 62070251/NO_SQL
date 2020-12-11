@@ -37,7 +37,7 @@
         "Numberofreceptionist": 5
     },
     {
-        "NameAirline": "Nok Air",
+        "NameAirline": "Bangkok Airways",
         "FlightNo": "DD7514",
         "Type": "one-ways",
         "Class": [
@@ -74,7 +74,7 @@
         "Numberofreceptionist": 5
     },
     {
-        "NameAirline": "Nok Air",
+        "NameAirline": "Thai LionAir",
         "FlightNo": "DD7410",
         "Type": "one-ways",
         "Class": [
@@ -111,7 +111,7 @@
         "Numberofreceptionist": 5
     },
     {
-        "NameAirline": "Nok Air",
+        "NameAirline": "Thai Smile Airways",
         "FlightNo": "DD9704",
         "Type": "two-ways",
         "Class": [
