@@ -13,7 +13,7 @@
     "Source":"กรุงเทพมหานคร(DMK)",
     "AirportSource":"ท่าอากาศยานดอนเมือง",
     "Destination":"ภูเก็ต(HKT)",
-    "AirportDestination":"ท่่าอากาศยานภูเก็ต",
+    "AirportDestination":"ท่าอากาศยานภูเก็ต",
     "DateDetail": [{
         "DateStart" : {
         "Date": "07 DEC 2020",
@@ -289,7 +289,7 @@
     "Source":"กรุงเทพฯ(BKK)",
     "AirportSource":"นานาชาติสุวรรณภูมิ",
     "Destination":"เวียงจันทน์(VTE)",
-    "AirportDestination":"นานาชาติวัตไต",
+    "AirportDestination":"สนามบินนานาชาติวัตไต",
     "DateDetail": [{
         "DateStart" : {
             "Date": "06 MAR 2021",
@@ -343,7 +343,7 @@
     "Source":"กรุงเทพฯ(BKK)",
     "AirportSource":"นานาชาติสุวรรณภูมิ",
     "Destination":"น่าน(NNT)",
-    "AirportDestination":"น่านนคร",
+    "AirportDestination":"ท่าอากาศยานน่านนคร",
     "DateDetail": [{
         "DateStart" : {
             "Date": "28 FEB 2021",
@@ -394,10 +394,10 @@
         "BusinessClass":{"Price":null,"NumberOfPassengers":null},
         "Economy":{"Price":1159,"NumberOfPassengers":271}
         }],
-    "Source":"กรุงเทพมหานคร",
-    "AirportSource":"DMK",
-    "Destination":"เชียงราย",
-    "AirportDestination":"CEI",
+    "Source":"กรุงเทพมหานคร(DMK)",
+    "AirportSource":"ท่าอากาศยานสุวรรณภูมิ",
+    "Destination":"เชียงราย(CEI)",
+    "AirportDestination":"ท่าอากาศยานแม่ฟ้าหลวง",
     "DateDetail":[{
         "DateStart":{
             "Date":"07 DEC 2020",
