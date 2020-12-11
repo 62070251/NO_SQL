@@ -119,6 +119,65 @@ app.post('/deleteform', (req, res) => {
     })
 })
 
+//หน้ากรอกฟอร์มแก้ไขข้อมูล ไฟล์ modify.ejs
+app.get("/modify", function (req, res) {
+    res.render("modify");
+})
+
+//หน้าแสดงข้อมูลที่ update ไฟล์ update.ejs
+app.post("/formUpdate",function(req, res){
+    var data = {
+        "NameAirline": req.body.airline,
+        "FlightNo": req.body.flightNo,
+        "Type": req.body.type,
+        "Class": [
+            {
+                "FirstClass": {
+                    "Price": req.body.price1,
+                    "NumberOfPassengers": req.body.passenger1
+                },
+                "BusinessClass": {
+                    "Price": req.body.price2,
+                    "NumberOfPassengers": req.body.price2
+                },
+                "Economy": {
+                    "Price": req.body.price3,
+                    "NumberOfPassengers": req.body.passenger3
+                }
+            }
+        ],
+        "Source": req.body.source,
+        "AirportSource": req.body.Airsource,
+        "Destination": req.body.dest,
+        "AirportDestination": req.body.Airdest,
+        "DateDetail": [
+            {
+                "DateStart": {
+                    "Date": req.body.date,
+                    "DepartureTime": req.body.Boarding,
+                    "ArrivingTime": req.body.Arriving
+                }
+            },
+            {
+                "DateEnd": {
+                    "Date": req.body.enddate,
+                    "DepartureTime": req.body.endBoarding,
+                    "ArrivingTime": req.body.endArriving
+                }
+            }
+        ],
+        "CaptionName": req.body.captain,
+        "CoPilotName": req.body.captain2,
+        "Numberof_FlightAttendant": req.body.attandant
+    };
+    const db = client.db(dbName);
+    const collection = db.collection('demo');
+    collection.updateOne(data, function (err, result) {
+        assert.equal(err, null);
+        res.render("update", { 'data': data });
+    });
+})
+
 client.connect(function (err) {
     assert.strictEqual(null, err);
     console.log("Connected successfully to server");
