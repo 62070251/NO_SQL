@@ -3,7 +3,7 @@ const app = express();
 const port = 3000
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
-const dbName = 'demo';
+const dbName = 'airline';
 const client = new MongoClient('mongodb://localhost:27017');
 const bodyParser = require("body-parser");
 app.set("view engine", "ejs");
@@ -63,10 +63,10 @@ app.post("/formInsert", function (req, res) {
         ],
         "CaptionName": req.body.captain,
         "CoPilotName": req.body.captain2,
-        "Numberof_FlightAttendant": req.body.attandant
+        "Numberofreceptionist": req.body.attandant
     };
     const db = client.db(dbName);
-    const collection = db.collection('demo');
+    const collection = db.collection('airline');
     collection.insertOne(data, function (err, result) {
         assert.equal(err, null);
         res.render("viewInsert", { 'data': data });
@@ -80,7 +80,7 @@ app.get("/query", function (req, res) {
 //หน้าแสดงข้อมูลที่ query จากหน้า /query
 app.post('/formsave', (req, res) => {
     const db = client.db(dbName);
-    const collection = db.collection('demo');
+    const collection = db.collection('airline');
     // Find some documents
     collection.find({ $and: [{ 'NameAirline': req.body.airline }, { 'Type': req.body.type }] }).sort({ 'airline': -1 }).toArray(function (err, myList) {
         assert.equal(err, null);
@@ -91,7 +91,7 @@ app.post('/formsave', (req, res) => {
 //หน้าแสดงข้อมูลทั้งหมด
 app.get("/queryall", function (req, res) {
     const db = client.db(dbName);
-    const collection = db.collection('demo');
+    const collection = db.collection('airline');
     // Find some documents
     collection.find({}).toArray(function (err, myList) {
         assert.equal(err, null);
@@ -105,14 +105,14 @@ app.get('/deleteforms', function (req, res) {
     res.render("delete");
 })
 
-//หน้าแสดงว่าข้อมูลถูกลบแล้ว
+//หน้าแสดงว่าข้อมูลถูกลบแล้ว ยังมีแก้อีกหน่อย
 app.post('/deleteform', (req, res) => {
     var data = {
         "NameAirline": req.body.name,
         "FlightNo": req.body.fno
     };
     const db = client.db(dbName);
-    const collection = db.collection('demo');
+    const collection = db.collection('airline');
     collection.deleteOne(data, function (err, result) {
         assert.equal(err, null);
         res.render('viewลบ', { "data": data })
@@ -120,62 +120,62 @@ app.post('/deleteform', (req, res) => {
 })
 
 //หน้ากรอกฟอร์มแก้ไขข้อมูล ไฟล์ modify.ejs
+
 app.get("/modify", function (req, res) {
-    res.render("modify");
+    res.render("updateform");
 })
 
-//หน้าแสดงข้อมูลที่ update ไฟล์ update.ejs
-app.post("/formUpdate",function(req, res){
-    var data = {
-        "NameAirline": req.body.airline,
-        "FlightNo": req.body.flightNo,
-        "Type": req.body.type,
-        "Class": [
-            {
-                "FirstClass": {
-                    "Price": req.body.price1,
-                    "NumberOfPassengers": req.body.passenger1
-                },
-                "BusinessClass": {
-                    "Price": req.body.price2,
-                    "NumberOfPassengers": req.body.price2
-                },
-                "Economy": {
-                    "Price": req.body.price3,
-                    "NumberOfPassengers": req.body.passenger3
-                }
-            }
-        ],
-        "Source": req.body.source,
-        "AirportSource": req.body.Airsource,
-        "Destination": req.body.dest,
-        "AirportDestination": req.body.Airdest,
-        "DateDetail": [
-            {
-                "DateStart": {
-                    "Date": req.body.date,
-                    "DepartureTime": req.body.Boarding,
-                    "ArrivingTime": req.body.Arriving
-                }
-            },
-            {
-                "DateEnd": {
-                    "Date": req.body.enddate,
-                    "DepartureTime": req.body.endBoarding,
-                    "ArrivingTime": req.body.endArriving
-                }
-            }
-        ],
-        "CaptionName": req.body.captain,
-        "CoPilotName": req.body.captain2,
-        "Numberof_FlightAttendant": req.body.attandant
-    };
+app.post("/formUpdate", function (req, res) {
+    var data = { 'FlightNo': req.body.flightNo };
     const db = client.db(dbName);
-    const collection = db.collection('demo');
-    collection.updateOne(data, function (err, result) {
-        assert.equal(err, null);
-        res.render("update", { 'data': data });
-    });
+    const collection = db.collection('airline');
+    collection.updateOne(data
+        , {
+            $set: {
+                "Type": req.body.type,
+                "Class": [
+                    {
+                        "FirstClass": {
+                            "Price": req.body.price1,
+                            "NumberOfPassengers": req.body.passenger1
+                        },
+                        "BusinessClass": {
+                            "Price": req.body.price2,
+                            "NumberOfPassengers": req.body.price2
+                        },
+                        "Economy": {
+                            "Price": req.body.price3,
+                            "NumberOfPassengers": req.body.passenger3
+                        }
+                    }
+                ],
+                "Source": req.body.source,
+                "AirportSource": req.body.Airsource,
+                "Destination": req.body.dest,
+                "AirportDestination": req.body.Airdest,
+                "DateDetail": [
+                    {
+                        "DateStart": {
+                            "Date": req.body.date,
+                            "DepartureTime": req.body.Boarding,
+                            "ArrivingTime": req.body.Arriving
+                        }
+                    },
+                    {
+                        "DateEnd": {
+                            "Date": req.body.enddate,
+                            "DepartureTime": req.body.endBoarding,
+                            "ArrivingTime": req.body.endArriving
+                        }
+                    }
+                ]
+
+            }
+        }
+        , function (err, result) {
+            assert.equal(err, null);
+            res.render("updatedisplay", { 'data': data });
+        });
 })
 
 client.connect(function (err) {
@@ -183,3 +183,4 @@ client.connect(function (err) {
     console.log("Connected successfully to server");
     app.listen(port, () => console.log('listening on port ' + port))
 });
+
