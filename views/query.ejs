@@ -6,10 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
 </head>
 <style>
     body {
         background-image: url('https://cutt.ly/khjp1L6');
+        font-family: 'Oswald', sans-serif" 
+
     }
 </style>
 
@@ -22,17 +25,29 @@
             <div class="col-md-8 mt-5">
                 <form action="/formsave" method="POST">
                     <div class="form-group">
-                        <label for="">Name </label>
-                        <input type="text" name="name">
+                        <label for="">สายการบิน</label>
+                        <input type="text" class="form-control" name="airline">
                     </div>
                     <div class="form-group">
-                        <label for="">Positon </label>
-                        <input type="text" name="position">
+                        <label for="">ปรเภท </label><br>
+                        <input type="radio" name="type" value="one-ways">
+                        <label for="">one-ways</label><br>
+                        <input type="radio" name="type" value="two-ways">
+                        <label for="">two-ways</label><br>
                     </div>
                     <div class="form-group">
-                        <label for="">School </label>
-                        <input type="text" name="school">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="" class="form-inline">ต้นทาง</label>
+                                <input type="text" class="form-inline form-control" name="source">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="" class="form-inline">ปลายทาง</label>
+                                <input type="text" class="form-inline form-control" name="Airsource">
+                            </div>
+                        </div>
                     </div>
+
 
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Doc</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Oswald', sans-serif;
+
+        }
+
+        img {
+            width: 150px;
+            float: left;
+        }
+    </style>
+</head>
+
+<body style=" background-color: #BEDDF1;">
+    <div class="container" id="container">
+        <br>
+        <div class="row">
+            <div class="col">
+                <%- include("menu"); -%>
+            </div>
+            <div class="col">
+                <h3>Flight : <%= data.NameAirline %></h3>
+                <h3>No. : <%= data.FlightNo %> </h3>
+                <h3>Type : <%= data.Type %> </h3>
+                <h3>Source : <%= data.Source %></h3>
+                <h3>Airport Source : <%= data.AirportSource %> </h3>
+                <h3>Destination : <%= data.Destination %></h3>
+                <h3>Airport Destination : <%= data.AirportDestination %> </h3>
+                <hr>
+                <h3>Firstclass</h3>
+                <h3>Price : <%= data.Class[0].FirstClass.Price %> </h3>
+                <h3>Number of Passengers : <%= data.Class[0].FirstClass.NumberOfPassengers %></h3>
+                <h3>Business</h3>
+                <h3>Price : <%= data.Class[0].BusinessClass.Price %></h3>
+                <h3>Number of Passengers : <%= data.Class[0].BusinessClass.NumberOfPassengers %></h3>
+                <h3>Economy</h3>
+                <h3>Price : <%= data.Class[0].Economy.Price %></h3>
+                <h3>Number of Passengers : <%= data.Class[0].Economy.NumberOfPassengers %></h3>
+                <hr>
+                <h3>วันเดินทางไป</h3>
+                <h3>Date : <%= data.DateDetail[0].DateStart.Date %></h3>
+                <h3>Boarding Time : <%= data.DateDetail[0].DateStart.DepartureTime %></h3>
+                <h3>Arriving Time : <%=data.DateDetail[0].DateStart.ArrivingTime%></h3>
+                <h3>วันเดินทางกลับ</h3>
+                <h3>Date : <%= data.DateDetail[1].DateEnd.Date %></h3>
+                <h3>Boarding Time : <%= data.DateDetail[1].DateEnd.DepartureTime%></h3>
+                <h3>Arriving Time : <%=data.DateDetail[1].DateEnd.ArrivingTime%></h3>
+                <hr>
+                <h3>ชื่อนักบิน : <%=data.CaptionName%></h3>
+                <h3>ผู้ช่วยนักบิน : <%=data.CoPilotName%></h3>
+                <h3>จำนวนพนักงานต้อนรับบนเครื่องบิน : <%=data.Numberofreceptionist%></h3>
+
+
+
+                <h1 style="color: red;">has been insert.</h1>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
