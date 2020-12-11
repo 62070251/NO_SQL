@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPDATE</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+    <style>
+         body {
+            font-family: 'Oswald', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class = "container pt-3">
+        <div class = "row">
+            <h1>Airline has been updated.</h1>
+        </div>
+        <hr>
+        <div class = "row">
+            <div class = "card">
+                <div class = "card-header">
+                    <h5 class="card-title" style="display: inline"><%= data.NameAirline %></h5>
+                    <p class="card-subtitle mb-2 text-muted" style="display: inline">No.<%= data.FlightNo %> </p>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Type : <%= data.Type %> 
+                        <br> Source : <%= data.Source %>
+                        <br> Airport Source : <%= data.AirportSource %>
+                        <br> Destination : <%= data.Destination %>
+                        <br> Airport Destination : <%= data.AirportDestination %> </p>
+                    <hr>
+                    <p style="color:gray;">Firstclass
+                        <br> Price : <%= data.Class[0].FirstClass.Price %>
+                        <br> Number of Passengers : <%= data.Class[0].FirstClass.NumberOfPassengers %></p>
+                    <br>
+                    <p style="color:gray;">Business
+                        <br> Price : <%= data.Class[0].BusinessClass.Price %>
+                        <br> Number of Passengers : <%= data.Class[0].BusinessClass.NumberOfPassengers %></p>
+                        <br>
+                    <p style="color:gray;" >Economy
+                        <br> Price : <%= data.Class[0].Economy.Price %>
+                        <br> Number of Passengers : <%= data.Class[0].Economy.NumberOfPassengers %></p>
+                </div>
+                <div class="card-footer">
+                    <div class = "row">
+                        <div class = "col-6">
+                            <p>วันเดินทางไป
+                                <br> Date : <%= data.DateDetail[0].DateStart.Date %>
+                                <br> Boarding Time : <%= data.DateDetail[0].DateStart.DepartureTime %>
+                                <br> Arriving Time : <%=data.DateDetail[0].DateStart.ArrivingTime%></p>
+                        </div>
+                        <div class = "col-6">
+                            <p>วันเดินทางกลับ
+                                <br> Date : <%= data.DateDetail[1].DateEnd.Date %>
+                                <br> Boarding Time : <%= data.DateDetail[1].DateEnd.DepartureTime%>
+                                <br> Arriving Time : <%=data.DateDetail[1].DateEnd.ArrivingTime%></p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class = "row">
+                        <p>นักบิน : <%=data.CaptionName%> 
+                            &nbsp; &nbsp; ผู้ช่วยนักบิน : <%=data.CoPilotName%> 
+                            &nbsp; &nbsp; จำนวนพนักงานต้อนรับบนเครื่องบิน : <%=data.Numberofreceptionist%></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

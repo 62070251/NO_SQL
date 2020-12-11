@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODIFY</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+    
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="row">
+            <div class='col-md-4 center mt-5'>
+                <%- include('menu');-%>
+            </div>
+            <div class="col-md-8 mt-5">
+                <form action="/modify" method="GET" id="myForm">
+                    <div class="form-group">
+                        <label for="">สายการบิน</label>
+                        <input type="text" class="form-control" name="airline">
+                    </div>
+                    <div class="form-group">
+                        <label for="">หมายเลขเที่ยวบิน</label>
+                        <input type="text" class="form-control" name="flightNo">
+                    </div>
+                    <div class="form-group">
+                        <label for="">ประเภท</label><br>
+                        <input type="radio" name="type" value="one-ways">
+                        <label for="">one-ways</label><br>
+                        <input type="radio" name="type" value="two-ways">
+                        <label for="">two-ways</label><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="">ประเภทที่นั่ง</label>
+                        <p>FirstClass :</p>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="" class="form-inline">ราคา(บาท)</label>
+                                <input type="text" class="form-inline form-control" name="price1">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="" class="form-inline">จำนวนผู้โดยสาร</label>
+                                <input type="text" class="form-inline form-control" name="passenger1">
+                            </div>
+                        </div>
+                        <p class="mt-3">Business :</p>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="" class="form-inline">ราคา(บาท)</label>
+                                <input type="text" class="form-inline form-control" name="price2">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="" class="form-inline">จำนวนผู้โดยสาร</label>
+                                <input type="text" class="form-inline form-control" name="passenger2">
+                            </div>
+                        </div>
+
+                    </div>
+                    <p>Economy :</p>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="" class="form-inline">ราคา(บาท)</label>
+                            <input type="text" class="form-inline form-control" name="price3">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="" class="form-inline">จำนวนผู้โดยสาร</label>
+                            <input type="text" class="form-inline form-control" name="passenger3">
+                        </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="">ต้นทาง</label>
+                        <input type="text" class="form-control" name="source">
+                    </div>
+                    <div class="form-group">
+                        <label for="">สนามบินต้นทาง</label>
+                        <input type="text" class="form-control" name="Airsource">
+                    </div>
+                    <div class="form-group">
+                        <label for="">ปลายทาง</label>
+                        <input type="text" class="form-control" name="dest">
+                    </div>
+                    <div class="form-group">
+                        <label for="">สนามบินปลายทาง</label>
+                        <input type="text" class="form-control" name="Airdest">
+                    </div>
+                    <div class="form-group">
+                        <label for="">วันเดินทางไป</label>
+                        <p>วันที่ :</p>
+                        <input type="text" class="form-control" name="date" placeholder="01 JAN 2020">
+                        <div class="row">
+                            <div class="col-md-6 mt-3">
+                                <p>Boarding Time :</p>
+                                <input type="text" class="form-control form-inline" name="Boarding" placeholder="00:00">
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                <p>Arriving Time :</p>
+                                <input type="text" name="Arriving" class="form-control form-inline" placeholder="00:00">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">วันเดินทางกลับ</label>
+                        <p>วันที่ :</p>
+                        <input type="text" class="form-control" name="enddate" placeholder="01 JAN 2020">
+                        <div class="row">
+                            <div class="col-md-6 mt-3">
+                                <p>Boarding Time :</p>
+                                <input type="text" class="form-control form-inline" name="endBoarding"
+                                    placeholder="00:00">
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                <p>Arriving Time :</p>
+                                <input type="text" name="endArriving" class="form-control form-inline"
+                                    placeholder="00:00">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">ชื่อนักบิน</label>
+                        <input type="text" class="form-control" name="captain">
+                    </div>
+                    <div class="form-group">
+                        <label for="">ชื่อผู้ช่วยนักบิน</label>
+                        <input type="text" class="form-control" name="captain2">
+                    </div>
+                    <div class="form-group">
+                        <label for="">จำนวนพนักงานต้อนรับบนเครื่องบิน</label>
+                        <input type="text" class="form-control" name="attandant">
+                    </div>
+                    <button type="submit" class="btn btn-info">Submit</button>
+                </form>
+            </div>
+        </div>
+        <br>
+        <hr>
+    </div>
+</body>
+
+</html>
